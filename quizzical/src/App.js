@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
 
 export default function App() {
   return (
-      <div> 
+      <div className='container'> 
         <h1> Hello Pips </h1>
       </div>
   );
