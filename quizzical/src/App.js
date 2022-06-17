@@ -7,13 +7,13 @@ export default function App() {
   const [start, setStart] = React.useState(true)
   const [quizData, setQuizData] = React.useState([]) //remember lazy loading
 
-  console.log(quizData)
+  
   //feth questions from api
   React.useEffect(()=>{
     fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
         .then(res => res.json())
         .then(data => setQuizData(data.results))
-  }, [start] )
+  }, [] )
 
   
   function beginGame () {
