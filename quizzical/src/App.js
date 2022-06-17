@@ -5,9 +5,9 @@ import './styles.css';
 
 export default function App() {
   const [start, setStart] = React.useState(true)
-  const [quizData, setQuizData] = React.useState("") //remember lazy loading
+  const [quizData, setQuizData] = React.useState([]) //remember lazy loading
 
- 
+  console.log(quizData)
   //feth questions from api
   React.useEffect(()=>{
     fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
@@ -19,15 +19,16 @@ export default function App() {
   function beginGame () {
     setStart(false)
   }
-
-  const questions = quizData.map (quiz => <p>{quiz.question}</p> )
+  
+ 
+  const questions = quizData.map( (quiz, index) => (<Question key={index} {...quiz} />) )
 
   return (
       <div className='container'> 
-        {start ? 
-        <Welcome start={beginGame} /> :
-         <Question questions={questions} />}
-        
+        { start ? 
+          <Welcome start={beginGame} /> :
+           questions
+        }
       </div>
   );
 }

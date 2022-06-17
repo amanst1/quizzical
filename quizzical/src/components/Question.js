@@ -4,8 +4,8 @@ export default function Question(props) {
     
     return (
         <div>
-            <p>{props.questions}</p>
-            <div>Buttons</div>
+            <p>{props.question}</p>
+            <div>{[...props.incorrect_answers, props.correct_answer] }</div>
             <hr/>
             
         </div>
