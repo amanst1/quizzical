@@ -1,9 +1,10 @@
+import Welcome from './components/Welcome';
 import './styles.css';
 
 export default function App() {
   return (
       <div className='container'> 
-        <h1> Hello Pips </h1>
+        <Welcome/>
       </div>
   );
 }
