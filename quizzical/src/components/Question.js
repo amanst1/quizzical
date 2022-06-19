@@ -38,7 +38,7 @@ export default function Question(props) {
         <div>
             <p>{props.question}</p>
             {randomChoices}
-            {correct && <h3> "Correct Answer"</h3>} 
+            {correct && <h3>Correct Answer</h3>} 
             <hr/>
             
         </div>
