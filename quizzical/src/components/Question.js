@@ -20,7 +20,7 @@ export default function Question(props) {
     return (
         <div>
             <p>{props.question}</p>
-            <div>{randomChoices}</div>
+            {randomChoices}
             <hr/>
             
         </div>

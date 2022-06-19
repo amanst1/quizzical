@@ -8,7 +8,7 @@ export default function Welcome (props) {
             <h1>QUIZZICAL</h1>
             <p>The game to test your know hows</p>
 
-            <button onClick={()=>props.start()} > Start quiz</button>
+            <button onClick={props.start} > Start quiz</button>
         </div>
     )
 
