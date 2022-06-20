@@ -15,12 +15,23 @@ export default function Question(props) {
         return arr
     }
 
-    
+
     function checkAnswer(value) {
-        return props.correct_answer === value ? setCorrect(true) : setCorrect(false)
-    
+        //console.log(props.correct_answer === value)
+        if(props.correct_answer === value) {
+            correct ? props.recordChoices(props.qnum, correct) : 
+                        props.recordChoices(props.qnum, !correct)
+            setCorrect(true)
+            
+        } else {
+            !correct ? props.recordChoices(props.qnum, correct) : 
+                        props.recordChoices(props.qnum, !correct)
+            setCorrect(false)
+            
+        }
+                
+        
     }
-     
     
     // load and store randomized answers in state
     React.useEffect(()=> {
@@ -32,8 +43,7 @@ export default function Question(props) {
         })
     }, [])
     
-    //console.log(props.correct_answer)
-
+    
     return (
         <div>
             <p>{props.question}</p>
