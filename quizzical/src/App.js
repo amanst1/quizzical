@@ -28,24 +28,20 @@ export default function App() {
               ...prevSelected, 
               [index] : isCorrect 
             }
-          })
-            
-        
+          })     
   }
-  // console.log(selectedChoices, "object")
-  // console.log(correctCount, "count")
 
   // counts the correct answers selected by user
   function countCorrect() {
       if(quizData.length === Object.keys(selectedChoices).length) {
         let count = 0
+        
         for(const selected in selectedChoices) {
-          console.log(selectedChoices.selected)
-          selected && count++ //work on object attr names
+          selectedChoices[selected] && count++ 
         }
+
         setCorrectCount(count)
-       }
-       
+       } 
   }
 
   //populates each question in to a Question js components array
@@ -58,7 +54,11 @@ export default function App() {
           <Welcome start={beginGame} /> :
            questions
         }
-        {!start && <button onClick={countCorrect}> Check Answer</button> }
+        
+        {!start && 
+        quizData.length === Object.keys(selectedChoices).length && <button onClick={countCorrect}> Check Answer</button> }
+
+        <h3>You have correctly answered {correctCount} question{correctCount === 1 ? "" : 's' }</h3>
       </div>
   );
 }
