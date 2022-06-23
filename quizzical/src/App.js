@@ -4,7 +4,7 @@ import Welcome from './components/Welcome';
 import './styles.css';
 
 export default function App() {
-  const [start, setStart] = React.useState(true)
+  const [start, setStart] = React.useState(false)
   const [quizData, setQuizData] = React.useState([]) //remember lazy loading
   const [selectedChoices, setSelectedChoices] = React.useState({})
   const [correctCount, setCorrectCount] = React.useState(0) 
