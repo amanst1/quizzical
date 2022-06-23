@@ -12,9 +12,11 @@ export default function App() {
 
   //fetch questions from api
   React.useEffect(()=>{
-    fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
-        .then(res => res.json())
-        .then(data => setQuizData(data.results))
+    if(quizData.length === 0) {
+      fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
+          .then(res => res.json())
+          .then(data => setQuizData(data.results))
+    }
   }, [start] )
 
   
@@ -25,6 +27,7 @@ export default function App() {
       setStart(false)
       setDisplayResult(false)
       setSelectedChoices({})
+      setQuizData([])
     } 
   }
   
@@ -67,7 +70,7 @@ export default function App() {
         <button onClick={countCorrect}> Check Answer</button> }
 
         {displayResult && 
-        <span> You have correctly answered {correctCount} question{correctCount === 1 ? " " : 's ' }
+        <span> You scored {correctCount}/5 correct answer{correctCount === 1 ? " " : 's ' }
           <button onClick={beginGame}> Play Again </button> </span> 
         }
       </div>
