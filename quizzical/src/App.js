@@ -18,7 +18,7 @@ export default function App() {
 
   
   function beginGame () {
-    setStart(false)
+    setStart(true)
   }
   
   //adds user's selected answer for each question to a single selectedChoices object
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
       <div className='container'> 
-        { start ? 
+        { !start ? 
           <Welcome start={beginGame} /> :
            questions
         }
