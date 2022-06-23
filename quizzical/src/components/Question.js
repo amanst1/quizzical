@@ -41,7 +41,7 @@ export default function Question(props) {
             const randomized = choices.map( (choice,index) => <button onClick={() => checkAnswer(choice)} key={index}>{choice}</button> )
             return randomized
         })
-    }, [])
+    }, [props.correct_answer])
     
     
     return (

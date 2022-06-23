@@ -15,11 +15,17 @@ export default function App() {
     fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
         .then(res => res.json())
         .then(data => setQuizData(data.results))
-  }, [] )
+  }, [start] )
 
   
   function beginGame () {
-    setStart(true)
+    if(!displayResult)  {
+      setStart(true)
+    }  else {
+      setStart(false)
+      setDisplayResult(false)
+      setSelectedChoices({})
+    } 
   }
   
   //adds user's selected answer for each question to a single selectedChoices object
@@ -60,7 +66,10 @@ export default function App() {
         quizData.length === Object.keys(selectedChoices).length && !displayResult &&
         <button onClick={countCorrect}> Check Answer</button> }
 
-        {displayResult && <h3 > You have correctly answered {correctCount} question{correctCount === 1 ? "" : 's' }</h3>}
+        {displayResult && 
+        <span> You have correctly answered {correctCount} question{correctCount === 1 ? " " : 's ' }
+          <button onClick={beginGame}> Play Again </button> </span> 
+        }
       </div>
   );
 }
