@@ -38,7 +38,7 @@ export default function Question(props) {
         const choices = shuffleArray([...props.incorrect_answers, props.correct_answer])
 
         setRandomChoices(() => {
-            const randomized = choices.map( (choice,index) => <button onClick={() => checkAnswer(choice)} key={index}>{choice}</button> )
+            const randomized = choices.map( (choice,index) => <button className="btn--selected" onClick={() => checkAnswer(choice)} key={index}>{choice}</button> )
             return randomized
         })
     }, [props.correct_answer])
@@ -46,7 +46,7 @@ export default function Question(props) {
     
     return (
         <div>
-            <p>{props.question}</p>
+            <p className="question">{props.question}</p>
             {randomChoices}
             {correct && <h3>Correct Answer</h3>} 
             <hr/>

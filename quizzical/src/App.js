@@ -13,7 +13,7 @@ export default function App() {
   //fetch questions from api
   React.useEffect(()=>{
     if(quizData.length === 0) {
-      fetch("https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple")
+      fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple")
           .then(res => res.json())
           .then(data => setQuizData(data.results))
     }
