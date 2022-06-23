@@ -8,6 +8,7 @@ export default function App() {
   const [quizData, setQuizData] = React.useState([]) //remember lazy loading
   const [selectedChoices, setSelectedChoices] = React.useState({})
   const [correctCount, setCorrectCount] = React.useState(0) 
+  const [displayResult, setDisplayResult] = React.useState(false)
 
   //fetch questions from api
   React.useEffect(()=>{
@@ -39,8 +40,8 @@ export default function App() {
         for(const selected in selectedChoices) {
           selectedChoices[selected] && count++ 
         }
-
         setCorrectCount(count)
+        setDisplayResult(true)
        } 
   }
 
@@ -55,10 +56,11 @@ export default function App() {
            questions
         }
         
-        {!start && 
-        quizData.length === Object.keys(selectedChoices).length && <button onClick={countCorrect}> Check Answer</button> }
+        {start && 
+        quizData.length === Object.keys(selectedChoices).length && !displayResult &&
+        <button onClick={countCorrect}> Check Answer</button> }
 
-        <h3>You have correctly answered {correctCount} question{correctCount === 1 ? "" : 's' }</h3>
+        {displayResult && <h3 > You have correctly answered {correctCount} question{correctCount === 1 ? "" : 's' }</h3>}
       </div>
   );
 }
