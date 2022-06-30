@@ -19,7 +19,7 @@ export default function App() {
     }
   }, [start] )
 
-  
+  //function that creates a new game either for the first time or once a round is completed
   function beginGame () {
     if(!displayResult)  {
       setStart(true)
