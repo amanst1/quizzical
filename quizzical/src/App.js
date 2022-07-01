@@ -77,7 +77,7 @@ export default function App() {
         <button className="btn--check" onClick={countCorrect}> Check Answer</button> }
 
         {displayResult && 
-        <span> You scored {correctCount}/5 correct answer{correctCount === 1 ? " " : 's ' }
+        <span className='score-text'> You scored {correctCount}/5 correct answer{correctCount === 1 ? " " : 's ' }
           <button className="btn--check" onClick={beginGame}> Play Again </button> </span> 
         }
       </div>

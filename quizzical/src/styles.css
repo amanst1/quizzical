@@ -1,3 +1,5 @@
+/* =========== GENERAL ELEMENTS ========= */
+
 body {
   margin: 0;
   background: #F5F7FB;
@@ -21,7 +23,7 @@ hr {
 }
 
 
-/* app js container div */
+/*=========== APP JS ELEMENTS ========= */
 
 .container {
   width:600px;
@@ -37,7 +39,11 @@ hr {
   color: #fff;
 }
 
-/* Question js elements */
+.score-text {
+  font-size: 18px;
+}
+
+/*=========== QUESTION JS ELEMENTS ========= */
 
 .question--container {
   text-align: left;
@@ -74,7 +80,7 @@ hr {
   opacity: 0.5;
 } 
 
-/* +++ Welcome js elements ++++ */
+/* ========= WELCOME JS ELEMENTS ============ */
 
 .welcome--page {
   width: 500px;
