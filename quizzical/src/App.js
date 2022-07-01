@@ -24,10 +24,10 @@ export default function App() {
     if(!displayResult)  {
       setStart(true)
     }  else {
-      setStart(false)
       setDisplayResult(false)
       setSelectedChoices({})
       setQuizData([])
+      setStart(false)
     } 
   }
   
@@ -56,7 +56,7 @@ export default function App() {
 
   //populates each question in to a Question js components array
   const questions = quizData.map( (quiz, index) => 
-                (<Question recordChoices={addSelectedChoice} key={index} qnum={index} {...quiz} />) )
+                (<Question recordChoices={addSelectedChoice} key={index} qnum={index} {...quiz} displayResult={displayResult} />) )
 
   return (
       <div className='container'> 

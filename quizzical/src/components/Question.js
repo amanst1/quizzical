@@ -16,20 +16,23 @@ export default function Question(props) {
     }
 
 
-    function checkAnswer(value) {
-        //console.log(props.correct_answer === value)
+    function checkAnswer(value, choosenBtn) {
+        //console.log(randomChoices[choosenBtn])
         if(props.correct_answer === value) {
-            correct ? props.recordChoices(props.qnum, correct) : 
-                        props.recordChoices(props.qnum, !correct)
+            correct ? props.recordChoices(props.qnum, correct) :
+                    props.recordChoices(props.qnum, !correct)
+            // props.displayResult ? randomChoices[choosenBtn].props.className="btn--choice-correct" : 
+            // randomChoices[choosenBtn].props.className="btn--choice"          
             setCorrect(true)
             
         } else {
             !correct ? props.recordChoices(props.qnum, correct) : 
                         props.recordChoices(props.qnum, !correct)
-            setCorrect(false)
-            
+           // props.displayResult ? randomChoices[choosenBtn].className="btn--choice-incorrect" : ""
+            setCorrect(false)    
         }
-                
+         
+              
         
     }
     
@@ -38,7 +41,8 @@ export default function Question(props) {
         const choices = shuffleArray([...props.incorrect_answers, props.correct_answer])
 
         setRandomChoices(() => {
-            const randomized = choices.map( (choice,index) => <button className="btn--choice" onClick={() => checkAnswer(choice)} key={index}>{choice}</button> )
+            const randomized = choices.map( (choice,index) => 
+                <button className="btn--choice" onClick={() => checkAnswer(choice, index)} key={index}>{choice}</button> )
             return randomized
         })
     }, [props.correct_answer])
@@ -48,7 +52,7 @@ export default function Question(props) {
         <div className="question--container">
             <p className="question">{props.question}</p>
             {randomChoices}
-             
+
             <hr/>
             
         </div>

@@ -63,13 +63,16 @@ hr {
   color: #293264;
 }
 
-/* .btn--correct {
-
+.btn--choice-correct {
+  border: none;
+  background: #94D7A2;
 }
 
-.btn--incorrect {
-
-} */
+.btn--choice-incorrect {
+  border: none;
+  background: #F8BCBC;
+  opacity: 0.5;
+} 
 
 /* +++ Welcome js elements ++++ */
 
