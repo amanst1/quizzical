@@ -67,11 +67,11 @@ export default function App() {
         
         {start && 
         quizData.length === Object.keys(selectedChoices).length && !displayResult &&
-        <button onClick={countCorrect}> Check Answer</button> }
+        <button className="btn--check" onClick={countCorrect}> Check Answer</button> }
 
         {displayResult && 
         <span> You scored {correctCount}/5 correct answer{correctCount === 1 ? " " : 's ' }
-          <button onClick={beginGame}> Play Again </button> </span> 
+          <button className="btn--check" onClick={beginGame}> Play Again </button> </span> 
         }
       </div>
   );

@@ -12,6 +12,8 @@ button {
   text-align: center;
   border-radius: 15px;
   margin: 10px;
+  cursor: pointer;
+  padding: 5px 5px;
 }
 
 hr {
@@ -25,6 +27,14 @@ hr {
   width:600px;
   margin: 50px auto;
   text-align: center;
+}
+
+.btn--check {
+  background: #4D5B9E;
+  width: 160px;
+  border: none;
+  font-size: 20px;
+  color: #fff;
 }
 
 /* Question js elements */
@@ -44,10 +54,10 @@ hr {
 
 .btn--choice { 
   border: 1px solid #4D5B9E;  
-  padding: 0 15px;
+  color: #293264;
 }
 
-.btn--selected {
+.btn--choice:focus {
   background-color: #D6DBF5;
   border: none; 
   color: #293264;
@@ -67,4 +77,21 @@ hr {
   width: 500px;
   margin: 200px auto;
   text-align: center;
+}
+
+.welcome--page > h1 {
+  font-size: 50px;
+}
+
+.welcome--page > p {
+  font-size: 25px;
+}
+
+.btn--start {
+  width: 200px;
+  height: 70px; 
+  background: #4D5B9E;
+  border: none;
+  color: #fff;
+  font-size: 30px;
 }

@@ -48,7 +48,7 @@ export default function Question(props) {
         <div className="question--container">
             <p className="question">{props.question}</p>
             {randomChoices}
-            {correct && <h3>Correct Answer</h3>} 
+             
             <hr/>
             
         </div>
