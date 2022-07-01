@@ -10,6 +10,9 @@ export default function App() {
   const [correctCount, setCorrectCount] = React.useState(0) 
   const [displayResult, setDisplayResult] = React.useState(false)
 
+  let showCheckAnswer = start && quizData.length === Object.keys(selectedChoices).length 
+                      && !displayResult
+
   //fetch questions from api
   React.useEffect(()=>{
     if(quizData.length === 0) {
@@ -56,7 +59,12 @@ export default function App() {
 
   //populates each question in to a Question js components array
   const questions = quizData.map( (quiz, index) => 
-                (<Question recordChoices={addSelectedChoice} key={index} qnum={index} {...quiz} displayResult={displayResult} />) )
+                (<Question recordChoices={addSelectedChoice} 
+                  key={index} 
+                  qnum={index} 
+                  {...quiz} 
+                  displayResult={displayResult} />) )
+
 
   return (
       <div className='container'> 
@@ -65,8 +73,7 @@ export default function App() {
            questions
         }
         
-        {start && 
-        quizData.length === Object.keys(selectedChoices).length && !displayResult &&
+        {showCheckAnswer &&
         <button className="btn--check" onClick={countCorrect}> Check Answer</button> }
 
         {displayResult && 
