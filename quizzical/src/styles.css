@@ -4,14 +4,14 @@ body {
 }
 
 button {
-  width: 100px;
+  width: 105px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   text-align: center;
   border-radius: 15px;
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
   padding: 5px 5px;
 }
@@ -48,7 +48,7 @@ hr {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   
 }
 
@@ -83,11 +83,11 @@ hr {
 }
 
 .welcome--page > h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .welcome--page > p {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .btn--start {
@@ -96,5 +96,5 @@ hr {
   background: #4D5B9E;
   border: none;
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
 }
